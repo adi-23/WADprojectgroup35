@@ -1,0 +1,24 @@
+{% load crispy_forms_filters %}
+{% load bootstrap %}
+<div class="container">
+    
+    <form method="GET">
+    {{ filter.form|crispy }}
+    <button type="submit" class="btn btn-secondary"> Search </button>
+    </form>
+
+
+
+</div>
+<ul>
+    {% for hospital in filter.qs %}
+
+        <li>
+            {{ hospital.hospital_name }}
+            {{ hospital_place}}
+            
+
+        </li>
+
+    {% endfor %}
+</ul>
